@@ -10,12 +10,21 @@
     <h1>HTML DOM Events</h1>
     <p>Trigger a function on hover that will output "Hello World":</p>
 
-    <button onmouseover="myFunction()">Action!</button>
+    <button onmouseover="myFunction()" onkeydown="checkKey(event)" tabindex="0">Action!</button>
     <p id="demo"></p>
 </body>
+
 <script>
     function myFunction() {
         document.getElementById("demo").innerHTML = "Hello World";
+        
+
+    }
+    
+    function checkKey(event) {
+        if (event.key == 'Enter' || event.key == ' ' ) {
+            myFunction();
+        }
     }
 </script>
 
